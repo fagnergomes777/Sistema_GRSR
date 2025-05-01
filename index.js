@@ -1,7 +1,7 @@
 import CriarTabela from './src/config/criar_tabela.js';
 import prompt from 'prompt-sync';
 import ColaboradoresView from'./src/modules/colaboradores/views/index.js';
-import reservasView from './src/modules/reservas/views/index.js'
+import ReservasView from './src/modules/reservas/views/index.js'
 import SalasView from './src/modules/salas/views/index.js'
 
 const input = prompt();
