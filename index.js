@@ -1,8 +1,8 @@
 import CriarTabela from './src/config/criar_tabela.js';
 import prompt from 'prompt-sync';
-import ColaboradoresView from'./src/modules/colaboradores/views/index.js';
-import ReservasView from './src/modules/reservas/views/index.js'
-import SalasView from './src/modules/salas/views/index.js'
+import ColaboradoresView from './src/modules/colaboradores/views/index.js';
+import ReservasView from './src/modules/reservas/views/index.js';
+import SalasView from './src/modules/salas/views/index.js';
 
 const input = prompt();
 
@@ -53,7 +53,7 @@ async function menuColaboradores() {
     while (opcao !== '0') {
         console.log(`\n--- Menu Colaboradores ---
                 1 - Cadastrar novo colaborador
-                2 - Buascar por email
+                2 - Buscar por email
                 3 - Atualizar colaborador
                 4 - Deletar colaborador
                 0 - Voltar`);
@@ -70,7 +70,7 @@ async function menuColaboradores() {
                 await ColaboradoresView.atualizarColaborador();
                 break;
             case '4':
-                await AlunoView.deletarColaborador();
+                await ColaboradoresView.deletarColaborador();
                 break;
             case '0':
                 return;
@@ -85,10 +85,10 @@ async function menuReservas() {
     while (opcao !== '0') {
         console.log(`\n--- Menu Reservas ---
                 1 - Criar reserva nova
-                2 - Listar reservas por colaborador ou sala
-                3 - Filtrar por status ou por data
-                4 - Evitar sobreposição de horários na mesma sala
-                5 - Contar numero de reservas por horário
+                2 - Listar reservas por colaborador
+                3 - Filtrar por status
+                4 - Evitar sobreposição
+                5 - Contar reservas por colaborador
                 6 - Atualizar status da reserva
                 7 - Cancelar reserva
                 0 - Voltar`);
@@ -108,9 +108,11 @@ async function menuReservas() {
                 await ReservasView.evitarSobreposicao();
                 break;
             case '5':
-                await ProfessorView.contarReservas();
+                await ReservasView.contarReservas();
+                break;
             case '6':
                 await ReservasView.atualizarStatus();
+                break;
             case '7':
                 await ReservasView.cancelarReserva();    
                 break;
