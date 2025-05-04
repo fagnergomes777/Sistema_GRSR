@@ -1,7 +1,7 @@
 import SalaModel from '../models/index.js';
 
 class SalaController {
-    // Criar uma nova sala
+    
     static async criar(nome, andar, capacidade) {
         try {
             if (!nome || !andar || !capacidade) {
@@ -15,7 +15,7 @@ class SalaController {
         }
     }
 
-    // Editar uma sala existente
+    
     static async editar(id_sala, nome, andar, capacidade) {
         try {
             if (!id_sala || !nome || !andar || !capacidade) {
@@ -32,7 +32,7 @@ class SalaController {
         }
     }
 
-    // Listar todas as salas
+    
     static async listarTodas() {
         try {
             const salas = await SalaModel.listarTodas();
@@ -43,7 +43,7 @@ class SalaController {
         }
     }
 
-    // Listar uma sala específica por ID
+    
     static async listarPorId(id_sala) {
         try {
             const sala = await SalaModel.listarPorId(id_sala);
@@ -56,7 +56,7 @@ class SalaController {
         }
     }
 
-    // Deletar uma sala pelo ID
+    
     static async deletarSala(id_sala) {
         try {
             const sala = await SalaModel.listarPorId(id_sala);
