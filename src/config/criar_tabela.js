@@ -4,7 +4,6 @@ import client from './database.js';
 
 class CriarTabela {
   
-  
   static async colaboradores() {
     const consulta = `
       CREATE TABLE IF NOT EXISTS colaboradores (
