@@ -4,7 +4,7 @@ class ColaboradorModel {
     static async criar(nome, email, departamento) {
         const dados = [nome, email, departamento];
         const consulta = `
-            INSERT INTO colaborador (nome, email, departamento)
+            INSERT INTO colaboradores (nome, email, departamento)
             VALUES ($1, $2, $3)
             RETURNING *;
         `;

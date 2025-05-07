@@ -1,21 +1,15 @@
-import { Pool } from 'pg';
-import dotenv from 'dotenv';
-
-
-dotenv.config();
-
-
+import dotenv from 'dotenv'
+import pg from 'pg'
+const { Pool } = pg
+dotenv.config()
+console.log("DEBUG -> DB_PASSWORD:", process.env.DB_PASSWORD);
+console.log("DEBUG -> Tipo:", typeof process.env.DB_PASSWORD);
 const client = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
-});
+  user: process.env.DB_USER ,
+  host: process.env.DB_HOST,     
+  password: process.env.DB_PASSWORD ,
+  port: process.env.DB_PORT,
+  database: process.env.DB_NAME 
+})
 
-
-client.connect()
-    .then(() => console.log('Conectado ao banco de dados com sucesso!'))
-    .catch(err => console.error('Erro ao conectar ao banco de dados', err.stack));
-
-export default client;
+export default client
